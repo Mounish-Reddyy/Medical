@@ -2,7 +2,12 @@ import streamlit as st
 import re
 import nltk
 from nltk.tokenize import word_tokenize
-nltk.download('punkt')
+
+
+# ✅ Ensure all required NLTK data are downloaded at runtime
+nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)  # <— sometimes required in newer NLTK
+
 
 # -----------------------------
 # Title & Description
@@ -69,4 +74,5 @@ if st.button("Extract Entities"):
 # -----------------------------
 st.markdown("---")
 st.caption("Developed using Streamlit + NLTK | Medical NER Project")
+
 
